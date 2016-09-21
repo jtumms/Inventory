@@ -20,9 +20,35 @@ public class Main {
             return gtr;
         }
         else {
-            Guitar addGuitar = new Guitar(x, y, z);
-            gtr.put(x, addGuitar);
-            System.out.println(addGuitar.getClass());
+            if (y.equalsIgnoreCase(("fender"))) {
+                Guitar addGuitar = new Fender(x, z);
+                gtr.put(x, addGuitar);
+                System.out.println("Success!!");
+            }
+            else if (y.equalsIgnoreCase(("gibson"))) {
+                Guitar addGuitar = new Guitar(x, y, z);
+                gtr.put(x, addGuitar);
+                System.out.println("Success!!");
+            }
+            else if (y.equalsIgnoreCase(("martin"))) {
+                Guitar addGuitar = new Guitar(x, y, z);
+                gtr.put(x, addGuitar);
+                System.out.println("Success!!");
+            }
+            else if (y.equalsIgnoreCase(("taylor"))) {
+                Guitar addGuitar = new Guitar(x, y, z);
+                gtr.put(x, addGuitar);
+                System.out.println("Success!!");
+            }
+            else if (y.equalsIgnoreCase(("guild"))) {
+                Guitar addGuitar = new Guitar(x, y, z);
+                gtr.put(x, addGuitar);
+                System.out.println("Success!!");
+            }
+            else
+            {
+                System.out.printf("%s is an invalid brand. Please try again.\n", y);
+            }
 
         }
         return gtr;
