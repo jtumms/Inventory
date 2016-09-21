@@ -6,16 +6,40 @@ import java.util.Scanner;
 
 public class Main {
 
+    static HashMap createItem(Scanner scanner, HashMap<String, Guitar> gtr){
+        System.out.print("Enter item number: ");
+        String x = scanner.nextLine();
+        System.out.print("Enter the item brand: ");
+        String y = scanner.nextLine();
+        System.out.print("Enter the quantity: ");
+        int z = Integer.parseInt(scanner.nextLine());
+
+
+        if (gtr.containsKey(x)) {
+            gtr.get(x).setQuantity(gtr.get(x).quantity + z);
+            return gtr;
+        }
+        else {
+            Guitar addGuitar = new Guitar(x, y, z);
+            gtr.put(x, addGuitar);
+            System.out.println(addGuitar.getClass());
+
+        }
+        return gtr;
+    }
+
+
     public static void main(String[] args) {
+
 
             Scanner scanner = new Scanner(System.in);
             HashMap<String, Guitar> gtr = new HashMap<>();
-            ArrayList<String> users = new ArrayList<>();
+            ArrayList<String> brands = new ArrayList<>();
         while (true) {
 
             System.out.println("Enter your username to begin: ");
             String uname = scanner.nextLine();
-            users.add(uname);
+
 
             boolean isLoggedIn = true;
             while (isLoggedIn) {
@@ -28,24 +52,13 @@ public class Main {
                 String option = scanner.nextLine();
                 switch (option) {
                     case "1":
-                        System.out.print("Enter item number: ");
-                        String x = scanner.nextLine();
-                        System.out.print("Enter the item brand: ");
-                        String y = scanner.nextLine();
-                        System.out.print("Enter the quantity: ");
-                        int z = Integer.parseInt(scanner.nextLine());
+                        createItem(scanner, gtr);
 
-                        if (gtr.containsKey(x)) {
-                            gtr.get(x).setQuantity(gtr.get(x).quantity + z);
-                        } else {
-                            Guitar addGuitar = new Guitar(x, y, z);
-                            gtr.put(x, addGuitar);
 
-                        }
                         break;
                     case "2":
                         System.out.print("Enter Item No.: ");
-                        x = scanner.nextLine();
+                        String x = scanner.nextLine();
                         gtr.remove(x);
                         break;
                     case "3":
@@ -59,9 +72,12 @@ public class Main {
                         System.out.println("Enter the item number you want to update:");
                         x = scanner.nextLine();
                         System.out.println("How many itmes are you adding to the current total?");
-                        z = Integer.parseInt(scanner.nextLine());
+                        int z = Integer.parseInt(scanner.nextLine());
                         int newQty = gtr.get(x).quantity + z;
                         gtr.get(x).quantity = newQty;
+                        System.out.println(String.format("Item added: %s", x));
+                        System.out.println(String.format("Quantity added: %s", z));
+                        System.out.println(String.format("New total: %s", newQty));
                         break;
                     case "5":
                         isLoggedIn = false;

@@ -8,6 +8,10 @@ public class Guitar {
     String brand;
     int quantity;
 
+    public Guitar() {
+
+    }
+
     public Guitar(String itemNumber, String brand, int quantity) {
         this.brand = brand;
         this.itemNumber = itemNumber;
