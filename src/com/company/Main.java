@@ -26,22 +26,22 @@ public class Main {
                 System.out.println("Success!!");
             }
             else if (y.equalsIgnoreCase(("gibson"))) {
-                Guitar addGuitar = new Guitar(x, y, z);
+                Guitar addGuitar = new Gibson(x, y, z);
                 gtr.put(x, addGuitar);
                 System.out.println("Success!!");
             }
             else if (y.equalsIgnoreCase(("martin"))) {
-                Guitar addGuitar = new Guitar(x, y, z);
+                Guitar addGuitar = new Martin(x, y, z);
                 gtr.put(x, addGuitar);
                 System.out.println("Success!!");
             }
             else if (y.equalsIgnoreCase(("taylor"))) {
-                Guitar addGuitar = new Guitar(x, y, z);
+                Guitar addGuitar = new Taylor(x, y, z);
                 gtr.put(x, addGuitar);
                 System.out.println("Success!!");
             }
             else if (y.equalsIgnoreCase(("guild"))) {
-                Guitar addGuitar = new Guitar(x, y, z);
+                Guitar addGuitar = new Guild(x, y, z);
                 gtr.put(x, addGuitar);
                 System.out.println("Success!!");
             }
